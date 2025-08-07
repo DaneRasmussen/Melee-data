@@ -1,0 +1,23 @@
+{
+  "name": "melee-data",
+  "version": "1.0.0",
+  "description": "Using slippi-js I want to create tools that will handle the data from replay files to provide insights as well as visualize behavior from the game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaneRasmussen/Melee-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaneRasmussen/Melee-data/issues"
+  },
+  "homepage": "https://github.com/DaneRasmussen/Melee-data#readme",
+  "dependencies": {
+    "@slippi/slippi-js": "^7.1.0"
+  }
+}
