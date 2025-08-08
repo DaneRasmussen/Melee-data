@@ -10,3 +10,11 @@
 .file-drop:isDragActive {
     background-color: #fafafa;
 } */
+
+.file-drop-wrapper {
+    height: 50%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}

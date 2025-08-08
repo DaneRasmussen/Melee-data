@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  background-color: #32326a;
+  height: 100%;
+}
+
+.title-card {
+  color: #eee;
+  margin-top: 0px;
+  padding-top: 1em;
+  font-size:xx-large;
+  font-weight: bold;
+  outline: 2px;
+}
+
+.title-line-break {
+  margin-bottom: 1em;
+  width: 90%;
+  color: #eee;
 }
 
 .App-logo {

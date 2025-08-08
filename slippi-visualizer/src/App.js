@@ -11,7 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Slippi Match Visualizer</h1>
+      <p className="title-card">Slippi Match Visualizer</p>
+      <hr className="title-line-break"/>
       <FileDrop onFileAccepted={handleFileAccepted} />
     </div>
   );
