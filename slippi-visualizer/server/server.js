@@ -42,21 +42,25 @@ app.post("/server/upload", upload.single("file"), async (req, res) => {
         const filePath = req.file.path;
         const game = new SlippiGame(filePath);
 
-        const settings = game.settings;
-        const metadata = game.metadata;
+        const settings = game.getSettings();
+        // console.log(settings)
+        const metadata = game.getMetadata();
         const stats = game.getStats();
 
         const payload = {
             stage: settings?.stageId,
             players: settings?.players?.map(p => ({
                 port: p?.port,
-                charcterId: p?.characterId,
-                tag: metadata?.players?.[p?.port]?.names?.code || null
+                characterId: p?.characterId,
+                nametag: p?.nametag
             })),
+            playerOneActionCount: stats.actionCounts[0],
+            playerTwoActionCount: stats.actionCounts[1],
             durationFrames: metadata?.lastFrame ?? null,
             conversions: stats?.conversions ?? [],
             combos: stats?.combos ?? [],
         };
+        console.log(payload)
         fs.unlink(filePath, () => {});
         res.json(payload);
 

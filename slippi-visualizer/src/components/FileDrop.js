@@ -15,7 +15,7 @@ async function sendFile(file) {
     return res.json();
 }
 
-const FileDrop = ({ onFileAccepted }) => {
+const FileDrop = ({ onParsed }) => {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
 
@@ -31,15 +31,15 @@ const FileDrop = ({ onFileAccepted }) => {
     setUploading(true);
     try {
       const data = await sendFile(file);
-      // bubble parsed data up, or handle locally
-      onFileAccepted ? onFileAccepted(data) : console.log("Parsed:", data);
+      // console.log(data.res)
+      onParsed?.(data);
     } catch (e) {
       console.error(e);
       setError(e.message || "Upload failed");
     } finally {
       setUploading(false);
     }
-  }, [onFileAccepted]);
+  }, [onParsed]);
 
   const { getRootProps, getInputProps, acceptedFiles, isDragActive } = useDropzone({
     onDrop,
